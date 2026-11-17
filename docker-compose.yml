@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nafsity
+      POSTGRES_PASSWORD: nafsity
+      POSTGRES_DB: nafsity
+    ports: ["5432:5432"]
+    volumes: ["nafsity_pg:/var/lib/postgresql/data"]
+volumes:
+  nafsity_pg:
